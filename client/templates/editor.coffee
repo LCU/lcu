@@ -5,4 +5,6 @@ Template.editor.helpers
       editor.getSession().setMode 'ace/mode/javascript'
       editor.setShowPrintMargin false
       editor.getSession().setUseWrapMode true
+      editor.getSession().setTabSize 2
+      editor.getSession().setUseSoftTabs true
   docid: "home"
