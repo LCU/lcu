@@ -15,4 +15,5 @@ coffeescript
 chrismbeckett:fontawesome4
 ecwyne:polymer
 ecwyne:polymer-elements
+iron:router
 
