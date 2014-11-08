@@ -10,4 +10,6 @@ mizzao:bootstrap-3
 underscore
 stylus
 mizzao:sharejs-ace
+meteorhacks:kadira
+coffeescript
 
