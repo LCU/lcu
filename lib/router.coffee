@@ -6,9 +6,11 @@ Router.route "/", ->
   @render "Home"
 
 Router.route "/about", ->
-  @render "About"
+  @render "About",
+  name: "About"
 
-Router.route "/edit/:id", ->
+Router.route "/edit/:id.:ext", ->
   @render "aceEditor",
-    data:
-      docId: @params.id
+  data:
+    docId: @params.id
+    ext: @params.ext
