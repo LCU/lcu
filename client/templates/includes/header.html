@@ -8,9 +8,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/"><i class="fa fa-university"></i> Learn Code University <span class="beta">&#946;eta</span></a>
+        <a class="navbar-brand" href="/"><i class="fa fa-university"></i> Learn Code University <span class="beta"></span></a>
       </div>
       <div class="collapse navbar-collapse" id="navigation">
+        <!-- Main navbar -->
+        <ul class="nav navbar-nav">
+          <li class="{{isActiveRoute regex='about'}}"><a href="/about">About</a></li>
+          <li class="{{isActiveRoute regex='edit'}}"><a href="/edit/home">Edit</a></li>
+        </ul>
+        <!-- Right navbar -->
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}
         </ul>

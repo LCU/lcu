@@ -1,1 +1,1 @@
-Documents = new Mongo.Collection 'docs'
+Docs = new Mongo.Collection('docs')
