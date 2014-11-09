@@ -1,4 +1,4 @@
-Template.customeditor.helpers
+Template.aceEditor.helpers
   config: ->
     return (editor) ->
       editor.setTheme 'ace/theme/solarized_dark'

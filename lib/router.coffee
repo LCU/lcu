@@ -1,10 +1,12 @@
-Router.configure layoutTemplate: "layout"
+Router.configure
+  layoutTemplate: "layout"
+  loadingTemplate: "loading"
 
 Router.route "/",
-  name: "editor"
+  name: "Home"
 
 Router.route "/edit/:id", ->
-  @render "customeditor",
+  @render "aceEditor",
     data:
       docId: @params.id
   return
