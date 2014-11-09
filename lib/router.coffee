@@ -6,5 +6,5 @@ Router.route "/",
 Router.route "/edit/:id", ->
   @render "customeditor",
     data:
-      docid: @params.id
+      docId: @params.id
   return
