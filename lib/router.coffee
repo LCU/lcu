@@ -2,11 +2,11 @@ Router.configure
   layoutTemplate: "layout"
   loadingTemplate: "loading"
 
-Router.route "/",
-  name: "Home"
+Router.route "/", ->
+  @render "Home"
 
-Router.route "/about",
-  name: "About"
+Router.route "/about", ->
+  @render "About"
 
 Router.route "/edit/:id", ->
   @render "aceEditor",
