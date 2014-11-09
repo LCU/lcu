@@ -16,8 +16,6 @@ ctl-helper@1.0.4
 ctl@1.0.2
 ddp@1.0.11
 deps@1.0.5
-ecwyne:polymer-elements@1.0.3
-ecwyne:polymer@1.0.2
 ejson@1.0.4
 email@1.0.4
 fastclick@1.0.1
@@ -58,7 +56,6 @@ mizzao:sharejs@0.7.0
 mobile-status-bar@1.0.1
 mongo-livedata@1.0.6
 mongo@1.0.8
-mrt:nprogress@0.1.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
@@ -71,7 +68,6 @@ routepolicy@1.0.2
 sacha:spin@2.0.4
 service-configuration@1.0.2
 session@1.0.4
-settinghead:auto-nprogress@1.0.0
 sha@1.0.1
 spacebars-compiler@1.0.3
 spacebars@1.0.3
