@@ -29,7 +29,18 @@ Template.aceEditor.helpers
       editor.getSession().setUseWrapMode true
       editor.getSession().setTabSize 2
       editor.getSession().setUseSoftTabs true
-      return
+      editor.commands.addCommand
+        name: "execute"
+        bindKey:
+          win: "Ctrl-enter"
+          mac: "Command-enter"
+        exec: (editor) ->
+          try
+            r = eval(editor.getCopyText() or editor.getValue())
+          catch e
+            r = e
+          console.dir r
+          return
 
   mode: ->
     if @ext.toString() is "js"
@@ -54,3 +65,10 @@ Template.aceEditor.helpers
       lang = "plain_text"
     else
       lang = ""
+
+  code: ->
+    Session.get 'code_value'
+
+Template.aceEditor.events
+  'keyup #editor': (e) ->
+    Session.set 'code_value', ace.edit("editor").getSession().getValue()
