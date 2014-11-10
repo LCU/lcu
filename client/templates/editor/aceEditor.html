@@ -1,6 +1,8 @@
 <template name="aceEditor">
-  mode: {{mode}}
-  id: {{docId}}
-  extension: <span class="extension">{{ext}}</span>
+  <div class="info">
+    <div class="id">id: {{docId}}</div>
+    <div class="mode">mode: {{mode}}</div>
+    <div class="ext">extension: {{ext}}</div>
+  </div>
   {{> sharejsAce docid=docId onRender=config id="editor" }}
 </template>
