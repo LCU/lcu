@@ -18,6 +18,8 @@ Template.aceEditor.helpers
       lang = "python"
     else if @ext.toString() is "md"
       lang = "markdown"
+    else if @ext.toString() is "json"
+      lang = "json"
     else if @ext.toString() is "plain"
       lang = "plain_text"
     else
