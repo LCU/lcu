@@ -20,6 +20,8 @@ Template.aceEditor.helpers
       lang = "markdown"
     else if @ext.toString() is "json"
       lang = "json"
+    else if @ext.toString() is "go"
+      lang = "go"
     else if @ext.toString() is "plain"
       lang = "plain_text"
     else
