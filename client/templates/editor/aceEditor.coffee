@@ -21,7 +21,9 @@ Template.aceEditor.helpers
     else if @ext.toString() is "json"
       lang = "json"
     else if @ext.toString() is "go"
-      lang = "go"
+      lang = "golang"
+    else if @ext.toString() is "dart"
+      lang = "dart"
     else if @ext.toString() is "plain"
       lang = "plain_text"
     else
@@ -65,6 +67,12 @@ Template.aceEditor.helpers
       lang = "python"
     else if @ext.toString() is "md"
       lang = "markdown"
+    else if @ext.toString() is "json"
+      lang = "json"
+    else if @ext.toString() is "go"
+      lang = "golang"
+    else if @ext.toString() is "dart"
+      lang = "dart"
     else if @ext.toString() is "plain"
       lang = "plain_text"
     else
