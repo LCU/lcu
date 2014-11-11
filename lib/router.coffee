@@ -1,6 +1,8 @@
 Router.configure
   layoutTemplate: "layout"
   loadingTemplate: "loading"
+  waitOn: ->
+    Meteor.subscribe "tracks"
 
 Router.route "/", (->
   @render "Home"
@@ -19,3 +21,8 @@ Router.route "/edit/:id.:ext", (->
     ext: @params.ext
 ),
   name: "Editor.ace"
+
+Router.route "/track", (->
+  @render "trackList"
+),
+  name: "track.list"

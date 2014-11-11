@@ -32,7 +32,7 @@ Template.aceEditor.helpers
       when "plain"
         lang = "plain_text"
     (editor) ->
-      editor.setTheme 'ace/theme/solarized_dark'
+      editor.setTheme 'ace/theme/solarized_light'
       editor.getSession().setMode "ace/mode/"+lang
       editor.setShowPrintMargin false
       editor.getSession().setUseWrapMode true

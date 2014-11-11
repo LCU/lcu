@@ -1,13 +1,14 @@
 /*r
   LCU CSS v0.1
 */
-brandColor = #7feb4d
+@import "nib"
+@import "variables"
 
 body
   margin-top 75px
   margin-bottom 20px
   overflow-x hidden
-  background-color #f5ffff
+  background-color bodyColor
 
 .beta
   // color #03BAD4
@@ -20,9 +21,9 @@ body
   height 570px
 
 .fa-university
-  color brandColor
+  color darkPurple
   a.navbar-brand>&:hover
-    color darken(brandColor, 30%)
+    color darken(darkPurple, 30%)
 
 .navbar-default
   background-color white
