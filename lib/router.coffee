@@ -23,7 +23,7 @@ Router.route "/edit/:id.:ext", (->
 ),
   name: "Editor.ace"
 
-Router.route "/track", (->
+Router.route "/tracks", (->
   @render "trackList"
 ),
   name: "track.list"

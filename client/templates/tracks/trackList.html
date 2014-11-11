@@ -1,13 +1,18 @@
 <template name="trackList">
-  {{count}}
-  <ul>
+  <h2>Count: {{count}}</h2>
+  <ul class="small-block-grid-2 large-block-grid-4">
     {{#each track}}
-      <li>{{name}}</li>
-      <ul>
-      {{#each languages}}
-        <li>{{this}}</li>
-      {{/each}}
-      </ul>
+      <li class="card">
+        <a href="/track/{{link}}">
+          <img src="{{image}}"/>
+          <h3>{{name}}</h3>
+          <p>{{desc}}</p>
+          <h4>Languages</h4>
+          {{#each languages}}
+            {{this}}
+          {{/each}}
+        </a>
+      </li>
     {{/each}}
   </ul>
 </template>
