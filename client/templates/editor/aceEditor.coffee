@@ -1,6 +1,6 @@
 Template.aceEditor.helpers
   config: ->
-    switch @ext.toString
+    switch @ext.toString()
       when "js"
         lang = "javascript"
       when "html"
@@ -30,8 +30,6 @@ Template.aceEditor.helpers
       when "dart"
         lang = "dart"
       when "plain"
-        lang = "plain_text"
-      else
         lang = "plain_text"
     (editor) ->
       editor.setTheme 'ace/theme/solarized_dark'
@@ -54,7 +52,7 @@ Template.aceEditor.helpers
           return
 
   mode: ->
-    switch @ext.toString
+    switch @ext.toString()
       when "js"
         lang = "javascript"
       when "html"
@@ -84,8 +82,6 @@ Template.aceEditor.helpers
       when "dart"
         lang = "dart"
       when "plain"
-        lang = "plain_text"
-      else
         lang = "plain_text"
 
   code: ->
