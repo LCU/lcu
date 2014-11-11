@@ -1,4 +1,5 @@
 <template name="editor">
+  {{setTitle "Editing file " docId}}
   id: {{docId}}
   {{> sharejsAce docid=docId onRender=config id="editor" }}
 </template>
