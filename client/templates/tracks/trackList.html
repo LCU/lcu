@@ -3,7 +3,11 @@
   <ul>
     {{#each track}}
       <li>{{name}}</li>
-      {{languages}}
+      <ul>
+      {{#each languages}}
+        <li>{{this}}</li>
+      {{/each}}
+      </ul>
     {{/each}}
   </ul>
 </template>
