@@ -7,10 +7,12 @@
           <img src="{{image}}"/>
           <h3>{{name}}</h3>
           <p>{{desc}}</p>
-          <h4>Languages</h4>
-          {{#each languages}}
-            {{this}}
-          {{/each}}
+          <span class="lang">
+            <h4>Languages</h4>
+            {{#each languages}}
+              {{this}}
+            {{/each}}
+          </span>
         </a>
       </li>
     {{/each}}

@@ -21,9 +21,16 @@ Router.route "/edit/:id.:ext", (->
     docId: @params.id
     ext: @params.ext
 ),
-  name: "Editor.ace"
+  name: "editor.ace"
 
 Router.route "/tracks", (->
   @render "trackList"
 ),
   name: "track.list"
+
+Router.route "/track/:name", (->
+  @render "trackShow",
+  data:
+    name: @params.name
+),
+  name: "track.show"
