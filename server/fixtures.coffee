@@ -1,8 +1,7 @@
 if Tracks.find().count() is 0
   Tracks.insert
     name: "Intro to HTML & CSS"
-    link: "introhtmlcss"
-    id: "introhtmlcss"
+    _id: "introhtmlcss"
     image: "http://placehold.it/350x150/FF0DFF/000000"
     desc: "In this track you will learn about HTML and CSS"
     languages: [
@@ -11,10 +10,14 @@ if Tracks.find().count() is 0
     ]
   Tracks.insert
     name: "Intro to JS"
-    link: "introjs"
-    id: "introjs"
+    _id: "introjs"
     image: "http://placehold.it/350x150/FF0DFF/000000"
     desc: "In this track you will learn about JavaScript"
     languages: [
       "JS"
     ]
+  Tracks.insert
+    name: "Test Track"
+    _id: "test"
+    image: "http://placehold.it/350x150/FF0DFF/000000"
+    desc: "This is a track for testing"

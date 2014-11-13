@@ -3,7 +3,7 @@
   <ul class="small-block-grid-2 large-block-grid-4">
     {{#each track}}
       <li class="card">
-        <a href="/track/{{link}}">
+        <a href="/track/{{_id}}">
           <img src="{{image}}"/>
           <h3>{{name}}</h3>
           <p>{{desc}}</p>
@@ -11,10 +11,14 @@
             <h4>Languages</h4>
             {{#each languages}}
               {{this}}
+            {{else}}
+              <p>There are no languages to go with the track</p>
             {{/each}}
           </span>
         </a>
       </li>
+    {{else}}
+      <li>Sorry, there are no tracks!</li>
     {{/each}}
   </ul>
 </template>
