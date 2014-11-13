@@ -4,6 +4,7 @@ Router.configure
   notFoundTemplate: "notFound"
   waitOn: ->
     Meteor.subscribe "tracks"
+  trackPageView: true
 
 Router.route "/", (->
   @render "Home"
