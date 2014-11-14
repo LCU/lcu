@@ -1,6 +1,6 @@
 <template name="trackList">
   {{setTitle "Track List"}}
-  <h2>Count: {{count}}</h2>
+  <h2>{{pluralize count "Track"}}</h2>
   <ul class="small-block-grid-2 large-block-grid-4">
     {{#each track}}
       <li class="card">

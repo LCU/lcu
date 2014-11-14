@@ -7,3 +7,9 @@ UI.registerHelper "setTitle", ->
     ++i
   document.title = "#{titlePrefix} - #{title}"
   return
+
+UI.registerHelper "pluralize", (n, thing) ->
+  if n is 1
+    "1 " + thing
+  else
+    n + " " + thing + "s"
