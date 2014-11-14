@@ -8,7 +8,10 @@ Router.configure
 
 
 Iron.Router.hooks.analytics = ->
-  analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
+  setTimeout (->
+    analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
+    return
+  ), 1000
   return
 
 Router.onAfterAction "analytics"
