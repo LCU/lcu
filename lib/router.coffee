@@ -1,3 +1,4 @@
+AnalyticsController = undefined
 Router.configure
   layoutTemplate: "layout"
   loadingTemplate: "loading"
@@ -5,26 +6,24 @@ Router.configure
   waitOn: ->
     Meteor.subscribe "tracks"
 
-AnalyticsController = RouteController.extend(
-  onAfterAction: ->
-    analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
-    @next()
-    return
-)
+
+Iron.Router.hooks.analytics = ->
+  analytics.page @path  if Session.equals("AnalyticsJS_loaded", true)
+  return
+
+Router.onAfterAction "analytics"
 
 Router.route "/", (->
   @render "Home"
   return
 ),
   name: "Home"
-  controller: "AnalyticsController"
 
 Router.route "/about", (->
   @render "About"
   return
 ),
   name: "About"
-  controller: "AnalyticsController"
 
 Router.route "/edit/:id.:ext", (->
   @render "aceEditor",
@@ -34,14 +33,12 @@ Router.route "/edit/:id.:ext", (->
   return
 ),
   name: "editor.ace"
-  controller: "AnalyticsController"
 
 Router.route "/tracks", (->
   @render "trackList"
   return
 ),
   name: "track.list"
-  controller: "AnalyticsController"
 
 Router.route "/track/:name", (->
   @render "trackShow",
@@ -50,4 +47,3 @@ Router.route "/track/:name", (->
   return
 ),
   name: "track.show"
-  controller: "AnalyticsController"
