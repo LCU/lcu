@@ -8,7 +8,7 @@ Router.configure
 
 
 Iron.Router.hooks.analytics = ->
-  analytics.page @path  if Session.equals("AnalyticsJS_loaded", true)
+  analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
   return
 
 Router.onAfterAction "analytics"
