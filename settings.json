@@ -1,7 +1,6 @@
 {
   "public": {
-   "ga": {
-      "id": "UA-44161537-4"
-    }
+    "analytics_api_key": "7bgmsv2d39",
+    "analytics_localhost_active": true
   }
 }

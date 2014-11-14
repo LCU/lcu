@@ -55,6 +55,7 @@ mizzao:sharejs@0.7.0
 mobile-status-bar@1.0.1
 mongo-livedata@1.0.6
 mongo@1.0.8
+natestrauser:analyticsjs@0.1.9
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
@@ -63,7 +64,6 @@ reactive-dict@1.0.4
 reactive-var@1.0.3
 reload@1.1.1
 retry@1.0.1
-reywood:iron-router-ga@0.4.0
 routepolicy@1.0.2
 sacha:spin@2.0.4
 service-configuration@1.0.2

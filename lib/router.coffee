@@ -4,15 +4,21 @@ Router.configure
   notFoundTemplate: "notFound"
   waitOn: ->
     Meteor.subscribe "tracks"
-  trackPageView: true
+
+Router.onRun ->
+  analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
+  @next()
+  return
 
 Router.route "/", (->
   @render "Home"
+  return
 ),
   name: "Home"
 
 Router.route "/about", (->
   @render "About"
+  return
 ),
   name: "About"
 
@@ -21,11 +27,13 @@ Router.route "/edit/:id.:ext", (->
   data:
     docId: @params.id
     ext: @params.ext
+  return
 ),
   name: "editor.ace"
 
 Router.route "/tracks", (->
   @render "trackList"
+  return
 ),
   name: "track.list"
 
@@ -33,5 +41,6 @@ Router.route "/track/:name", (->
   @render "trackShow",
   data:
     name: @params.name
+  return
 ),
   name: "track.show"
