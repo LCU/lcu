@@ -5,7 +5,7 @@ Router.configure
   waitOn: ->
     Meteor.subscribe "tracks"
 
-Router.onRun ->
+Router.onBeforeAction ->
   analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
   @next()
   return
