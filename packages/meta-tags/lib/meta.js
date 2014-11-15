@@ -59,7 +59,7 @@ Template.MetaTags.helpers({
 
   _MetaTag: function() {
     var attrs = {};
-    attrs[this.name] = this.property;
+    attrs.name = this.property;
     attrs.content = this.content;
 
     return Blaze.Template(function() {
