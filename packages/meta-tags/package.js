@@ -21,9 +21,3 @@ Package.on_use(function(api) {
     api.versionsFrom('METEOR@0.9.0');
   }
 });
-
-Package.on_test(function(api) {
-  api.use(["yasinuslu:blaze-meta", "tinytest", "test-helpers", "underscore", "jquery"], "client");
-
-  api.add_files("tests/test.js", "client");
-});
