@@ -6,6 +6,7 @@ UI.registerHelper "setTitle", ->
     title += arguments[i]
     ++i
   document.title = "#{titlePrefix} - #{title}"
+  Meta.set "og:title", "#{titlePrefix} - #{title}"
   return
 
 UI.registerHelper "pluralize", (n, thing) ->
@@ -13,3 +14,6 @@ UI.registerHelper "pluralize", (n, thing) ->
     "1 #{thing}"
   else
     "#{n} #{thing}s"
+
+UI.registerHelper "meta", (type, content) ->
+  Meta.set type, content
