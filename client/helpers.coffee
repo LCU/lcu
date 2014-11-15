@@ -6,8 +6,8 @@ UI.registerHelper "setTitle", ->
     title += arguments[i]
     ++i
   document.title = "#{titlePrefix} - #{title}"
-  Meta.set "og:title", "#{titlePrefix} - #{title}"
   Meta.set "twitter:title", "#{titlePrefix} - #{title}"
+  Meta.set "og:title", "#{titlePrefix} - #{title}"
   return
 
 UI.registerHelper "pluralize", (n, thing) ->
