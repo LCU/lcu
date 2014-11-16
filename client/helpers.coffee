@@ -10,6 +10,17 @@ UI.registerHelper "setTitle", ->
   Meta.set "og:title", "#{titlePrefix} - #{title}"
   return
 
+UI.registerHelper "overTitle", ->
+  title = ""
+  i = 0
+  while i < arguments.length - 1
+    title += arguments[i]
+    ++i
+  document.title = title
+  Meta.set "twitter:title", title
+  Meta.set "og:title", title
+  return
+
 UI.registerHelper "pluralize", (n, thing) ->
   if n is 1
     "1 #{thing}"

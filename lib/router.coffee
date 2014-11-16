@@ -44,6 +44,7 @@ Router.route "/tracks", (->
   name: "track.list"
 
 Router.route "/t/:name", (->
+  @layout "trackLayout"
   @render "trackShow",
   data:
     name: @params.name
