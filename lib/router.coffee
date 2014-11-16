@@ -28,7 +28,7 @@ Router.route "/about", (->
 ),
   name: "About"
 
-Router.route "/edit/:id.:ext", (->
+Router.route "/e/:id.:ext", (->
   @render "aceEditor",
   data:
     docId: @params.id
@@ -43,7 +43,7 @@ Router.route "/tracks", (->
 ),
   name: "track.list"
 
-Router.route "/track/:name", (->
+Router.route "/t/:name", (->
   @render "trackShow",
   data:
     name: @params.name
