@@ -18,7 +18,7 @@ Router.onAfterAction "analytics"
 
 Router.map ->
   @route "Home",
-    path: "/home"
+    path: "/"
 
   @route "About",
     path: "/about"
