@@ -65,3 +65,5 @@ Router.route "/u/:user", (->
     user: Meteor.users.findOne({username: @params.user})
 ),
   name: "user.show"
+  waitOn: ->
+    Meteor.subscribe "users"
