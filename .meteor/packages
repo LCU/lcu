@@ -14,10 +14,11 @@ chrismbeckett:fontawesome4
 iron:router
 sacha:spin
 ian:accounts-ui-bootstrap-3
-accounts-password
 zimme:iron-router-active
 force-ssl
 natestrauser:analyticsjs
 meta:tags
 mike:mocha
+accounts-password
+accounts-github
 
