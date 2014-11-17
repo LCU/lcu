@@ -11,7 +11,7 @@ Iron.Router.hooks.analytics = ->
   setTimeout (->
     analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
     return
-  ), 10
+  ), 5
   return
 
 Router.onAfterAction "analytics"
@@ -24,10 +24,12 @@ Router.map ->
     path: "/about"
 
   @route "aceEditor",
-    path: "/e/:id.:ext?"
-    data:
-      docId: -> @params.id
-      ext: -> @params.ext
+    path: "/e/:id.:ext"
+    action: ->
+      @render "aceEditor",
+        data:
+          docId: @params.id
+          ext: @params.ext
 
   @route "trackList",
     path: "/tracks"
@@ -35,8 +37,10 @@ Router.map ->
   @route "trackShow",
     path: "/t/:name"
     layoutTemplate: "trackLayout"
-    data:
-      name: -> @params.name
+    action: ->
+      @render "trackShow",
+        data:
+          name: @params.name
 
   @route "userList",
     path: "/users"
@@ -46,5 +50,7 @@ Router.map ->
 
   @route "userShow",
     path: "/u/:user"
-    data:
-      user: -> Meteor.users.findOne({username: @params.user})
+    action: ->
+      @render "userShow",
+      data:
+        user: Meteor.users.findOne({username: @params.user})
