@@ -50,7 +50,6 @@ Router.map ->
 
   @route "userShow",
     path: "/u/:user"
-    action: ->
-      @render "userShow",
-      data:
-        user: Meteor.users.findOne({username: @params.user})
+    data:
+      user: -> Meteor.users.findOne({username: @params.user})
+    waitOn: -> subs.subscribe "users"
