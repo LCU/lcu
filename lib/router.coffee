@@ -1,10 +1,10 @@
-AnalyticsController = undefined
+subs = new SubsManager()
 Router.configure
   layoutTemplate: "layout"
   loadingTemplate: "loading"
   notFoundTemplate: "notFound"
   waitOn: ->
-    Meteor.subscribe "tracks"
+    subs.subscribe "tracks"
 
 
 Iron.Router.hooks.analytics = ->
@@ -16,54 +16,35 @@ Iron.Router.hooks.analytics = ->
 
 Router.onAfterAction "analytics"
 
-Router.route "/", (->
-  @render "Home"
-  return
-),
-  name: "Home"
+Router.map ->
+  @route "Home",
+    path: "/home"
 
-Router.route "/about", (->
-  @render "About"
-  return
-),
-  name: "About"
+  @route "About",
+    path: "/about"
 
-Router.route "/e/:id.:ext", (->
-  @render "aceEditor",
-  data:
-    docId: @params.id
-    ext: @params.ext
-  return
-),
-  name: "editor.ace"
+  @route "aceEditor",
+    path: "/e/:id.:ext?"
+    data:
+      docId: -> @params.id
+      ext: -> @params.ext
 
-Router.route "/tracks", (->
-  @render "trackList"
-  return
-),
-  name: "track.list"
+  @route "trackList",
+    path: "/tracks"
 
-Router.route "/t/:name", (->
-  @layout "trackLayout"
-  @render "trackShow",
-  data:
-    name: @params.name
-  return
-),
-  name: "track.show"
+  @route "trackShow",
+    path: "/t/:name"
+    layoutTemplate: "trackLayout"
+    data:
+      name: -> @params.name
 
-Router.route "/users", (->
-  @render "userList",
-  data:
-    users: Meteor.users.find()
-),
-  name: "user.list"
+  @route "userList",
+    path: "/users"
+    data:
+      users: -> Meteor.users.find()
+    waitOn: -> subs.subscribe "users"
 
-Router.route "/u/:user", (->
-  @render "userShow",
-  data:
-    user: Meteor.users.findOne({username: @params.user})
-),
-  name: "user.show"
-  waitOn: ->
-    Meteor.subscribe "users"
+  @route "userShow",
+    path: "/u/:user"
+    data:
+      user: -> Meteor.users.findOne({username: @params.user})
