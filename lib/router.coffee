@@ -51,3 +51,20 @@ Router.route "/t/:name", (->
   return
 ),
   name: "track.show"
+
+Router.route "/u/:user", (->
+  @render "userShow",
+  data:
+    user: Meteor.users.findOne({username: @params.user})
+),
+  name: "user.show"
+
+#Router.map ->
+#  @route "Home",
+#    path: "/"
+#
+#  @route "About",
+#    path: "/about"
+#
+#  @route "editor.ace",
+#    path: "/e/:id.:ext"

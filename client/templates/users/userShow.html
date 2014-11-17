@@ -1,0 +1,10 @@
+<template name="userShow">
+  {{#if user}}
+    <div class="user"><h1>{{user.username}}</h1></div>
+    {{#each user.emails}}
+      {{this.address}}
+    {{/each}}
+  {{else}}
+    <p>Sorry, that user dosn't exist</p>
+  {{/if}}
+</template>
