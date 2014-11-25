@@ -7,6 +7,7 @@ Router.configure
     subs.subscribe "tracks"
 
 
+# DOC: Track pageview on analytics
 Iron.Router.hooks.analytics = ->
   setTimeout (->
     analytics.page @path if Session.equals("AnalyticsJS_loaded", true)
@@ -14,15 +15,17 @@ Iron.Router.hooks.analytics = ->
   ), 5
   return
 
+# DOC: After route accesed call analytics hook
 Router.onAfterAction "analytics"
 
 Router.map ->
+  # DOC: Root route
   @route "Home",
     path: "/"
-
+  # DOC: About route
   @route "About",
     path: "/about"
-
+  # DOC: Route for ace editor, uses :id as document id
   @route "aceEditor",
     path: "/e/:id.:ext"
     action: ->
@@ -31,9 +34,11 @@ Router.map ->
           docId: @params.id
           ext: @params.ext
 
+  # DOC: Show all the different tracks
   @route "trackList",
     path: "/tracks"
 
+  # DOC: Show the track from :name
   @route "trackShow",
     path: "/t/:name"
     layoutTemplate: "trackLayout"
@@ -42,12 +47,14 @@ Router.map ->
         data:
           name: @params.name
 
+  # DOC: List all users on LCU instance
   @route "userList",
     path: "/users"
     data:
       users: -> Meteor.users.find()
     waitOn: -> subs.subscribe "users"
 
+  # DOC: Show the user from :user url
   @route "userShow",
     path: "/u/:user"
     action: ->
