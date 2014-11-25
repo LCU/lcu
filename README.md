@@ -1,6 +1,10 @@
 # LCU (Learn Code University)
 
-Made using [meteor](http://meteor.com)
+Made using [meteor][mt]
+
+## Demo
+
+There is a demo hosted on [meteor][mt], [link][demo]
 
 ## Mission
 
@@ -17,3 +21,6 @@ If people run it on their own servers they have complete control over the data t
 - Files in `/lib` are loaded before anything else.
 - Any `main.*` file is loaded after everything else.
 - Everything else loads in alphabetical order based on the file name.
+
+[mt]: http://meteor.com
+[demo]: http://lcu.meteor.com
