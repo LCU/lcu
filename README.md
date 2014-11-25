@@ -2,6 +2,11 @@
 
 Made using [meteor](http://meteor.com)
 
+## Mission
+
+LCU's Mission is so be able to have people clone this repo onto their own servers where they can run a complete version of Learn Code University.
+If people run it on their own servers they have complete control over the data that they are collecting.
+
 ## Folder structure
 - Code in the `/server` directory only runs on the server.
 - Code in the `/client` directory only runs on the client.
