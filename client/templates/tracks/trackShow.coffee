@@ -1,12 +1,11 @@
-Template.trackShow.helpers ->
+Template.trackShow.helpers
   code: ->
-    Session.set "editor_value", "hi"
-    return Session.get 'editor_value'
+    Session.get 'editor_value'
 
   config: ->
     (editor) ->
-      editor.setTheme "ace/theme/monokai"
-      editor.getSession().setMode "ace/mode/ruby"
+      editor.setTheme "ace/theme/solarized_dark"
+      editor.getSession().setMode "ace/mode/html"
       editor.setShowPrintMargin false
       editor.getSession().setUseWrapMode true
       editor.getSession().setTabSize 2
