@@ -92,6 +92,3 @@ Template.aceEditor.helpers
 Template.aceEditor.events
   'keyup #editor': (e) ->
     Session.set 'code_value', ace.edit("editor").getSession().getValue()
-
-$ ->
-  console.log "hi"

@@ -29,3 +29,6 @@ UI.registerHelper "pluralize", (n, thing) ->
 
 UI.registerHelper "meta", (type, content) ->
   Meta.set type, content
+
+UI.registerHelper "session", (input) ->
+  Session.get input
