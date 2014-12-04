@@ -2,9 +2,13 @@
 
 Made using [meteor][mt]
 
-## Demo
+## [Demo][demo]
 
-There is a demo hosted on [meteor][mt], [link][demo]
+There is a demo hosted on [meteor][mt], https://lcu.meteor.com
+
+## Contributing
+
+If you would like to contribute to this project please follow [these](https://github.com/thoughtbot/guides/tree/master/protocol/git#write-a-feature) guidelines to contribute.
 
 ## Mission
 
