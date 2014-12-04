@@ -2,4 +2,10 @@
   {{setTitle "Track - " name}}
   {{name}}
   {{Track.desc}}
+  <div class="editor">
+    {{> sharejsAce docid="ruby" onRender=config id="editor" }}
+  </div>
+  <div class="preview">
+    <pre>{{code}}</pre>
+  </div>
 </template>
