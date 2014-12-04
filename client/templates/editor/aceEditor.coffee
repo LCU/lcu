@@ -30,7 +30,7 @@ Template.aceEditor.helpers
           lang = "golang"
         when "dart"
           lang = "dart"
-        when "plain"
+        when "txt"
           lang = "plain_text"
     (editor) ->
       editor.setTheme 'ace/theme/solarized_dark'
@@ -83,7 +83,7 @@ Template.aceEditor.helpers
           lang = "golang"
         when "dart"
           lang = "dart"
-        when "plain"
+        when "txt"
           lang = "plain_text"
 
   code: ->

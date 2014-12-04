@@ -1,5 +1,20 @@
 <template name="trackShow">
   {{setTitle "Track - " name}}
-  {{name}}
-  {{Track.desc}}
+  <div class="instructions">
+    <h3>Track: {{name}}</h3>
+    <p>Instructions Placeholder</p>
+  </div>
+  <div class="editor">
+    {{> sharejsAce docid="html" onRender=config id="editor" }}
+  </div>
+  <div class="preview">
+    <span class="name">Output:</span>
+    <div class="output">{{{session "editor_value"}}}</div>
+    <hr/>
+    <span class="name">Code:</span>
+    <pre class="code">{{session "editor_value"}}</pre>
+    <hr/>
+    <span class="name">Console:</span>
+    <pre class="console"></pre>
+  </div>
 </template>
