@@ -6,7 +6,6 @@
 meteor-platform
 mizzao:bootstrap-3
 underscore
-stylus
 mizzao:sharejs-ace
 meteorhacks:kadira
 coffeescript
@@ -23,4 +22,5 @@ accounts-github
 meteorhacks:subs-manager
 meteorhacks:zones
 zucchinize:meta
+less
 
