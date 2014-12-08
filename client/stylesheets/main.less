@@ -6,16 +6,12 @@
 #main {
   margin-top: 75px;
   margin-bottom: 20px;
-  overflow-x: hidden;
 }
 
 
 .beta {
-  // color #03BAD4
-  .color {
+  &::after {
     color: #03BAD4;
-  }
-  ::after {
     content: "βeta";
   }
 }
@@ -66,41 +62,4 @@ a.navbar-brand>&:hover {
 
 .home {
   text-align: center;
-}
-
-#track {
-  margin-top: 50px;
-  overflow-x: hidden;
-}
-
-.editor, .preview {
-  float: left;
-  width: 40%;
-  height: 92.5vh;
-}
-
-.editor > #editor {
-  height: 92.5vh;
-}
-
-.preview > pre {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-}
-
-.preview {
-  overflow: scroll;
-}
-
-.instructions {
-  background-color: #ff7687;
-  float: left;
-  width: 20%;
-  padding: 5px;
-  height: 92.5vh;
-}
-
-.output, .code, .console, .name {
-  padding: 5px;
 }

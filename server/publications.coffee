@@ -3,3 +3,7 @@ Meteor.publish "tracks", ->
 
 Meteor.publish "users", ->
   Meteor.users.find()
+
+Meteor.publish "trackinfo", (name) ->
+  check name, String
+  TrackInfo.find({name: name})

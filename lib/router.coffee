@@ -42,10 +42,10 @@ Router.map ->
   @route "trackShow",
     path: "/t/:name"
     layoutTemplate: "trackLayout"
-    action: ->
-      @render "trackShow",
-        data:
-          name: @params.name
+    data: ->
+      track: TrackInfo.find({name: @params.name})
+    waitOn: -> subs.subscribe "trackinfo", @params.name
+    unload: -> subs.reset()
 
   # DOC: List all users on LCU instance
   @route "userList",
